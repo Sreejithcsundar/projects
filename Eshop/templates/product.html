@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+    <p><a href="{% url 'shop:allProdCat' %}" style="text-decoration: none;">Home</a>
+       <a href="{{product.category.get_url}}" style="text-decoration: none;"> {{ product.category}}</a> | {{product.name}}
+    </p>
+    <div class="container-fluid">
+        <div class="shadow card c_main">
+          <div class="row c1">
+            <div class="col-md-4 card1">
+                <img src="{{product.image.url}}" class="product-img" alt="{{product.name}}">
+            </div>
+            <div class="col-md-8 card2">
+                <h2 class="name">{{product.name}}</h2>
+                <h6 class="price">${{product.price}}</h6>
+                <h4 class="des">Product Description</h4>
+                <p class="description">{{product.description}}</p>
+                <br>
+                <br>
+
+                 {% if product.stock <= 0 %}
+                <P class="text-justify my_prod_text"><b>Out of stock</b></P>
+                {% else %}
+                 {% if user.is_authenticated %}
+                   <a href="{% url 'shop:checkout' %}" class="btn btn-secondary">Buy Now</a>
+                   <a class="btn btn-secondary" href="{% url 'cartapp:add_cart' product.id %}">Add to Cart</a>
+                 {% else %}
+                  <b> PLEASE LOGIN AND BUY </b>
+                   {% endif %}
+                {% endif %}
+            </div>
+          </div>
+        </div>
+    </div>
+{% endblock %}

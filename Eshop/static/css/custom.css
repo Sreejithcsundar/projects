@@ -1,0 +1,340 @@
+.product-image{
+               width:250px;
+               height:250px;}
+
+
+
+/** FOOTER **/
+.links{
+text-decoration:none;
+}
+
+.footer-container{
+  background-color:#30464D;
+  color: #fff;
+  display: flex;
+
+  }
+.footer {
+      flex: 1;
+      padding: 10px;
+      border: 1px solid #ccc;
+      }
+.footer-bottom{
+ letter-spacing:.2em;
+ font-size:14px;
+ text-transform:capitalize;
+ text-align:center;
+ background-color:#a3a8a5;
+ }
+
+/** NAVBAR **/
+
+
+
+.navbar-expand-lg{
+
+
+}
+
+/*** CART PAGE ***/
+
+.table-row{
+    background-color: #edf2a0;
+}
+.thead{
+ font-size: 25px;
+}
+.my_custom_table{
+    min-width:400px;
+    font-size:14px;
+    }
+
+.my_custom_thead{
+    font-weight:normal;
+    text-transform:uppercase;
+    letter-spacing:.2em;
+    background-color:#5c99fa !important;
+    }
+
+.custom-a{
+    text-decoration:none;
+
+}
+
+.custom-icon{
+    text-decoration:none;
+    color:#bd571c !important;
+}
+
+.my_custom_button{
+    margin-top:5px;
+}
+
+.custom_image{
+   width:300px;
+   height:400px;
+}
+.text{
+font-size: 20px;
+}
+
+.custom-icon {
+  font-size: 25px;
+
+
+}
+
+*{
+   margin: 0;
+   padding: 0;
+   box-sizing: border-box;
+   font-family: 'Courier New', Courier, monospace;
+}
+
+
+/*** CHECKOUT PAGE ***/
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f4f4f4;
+}
+
+.container{
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+h1 {
+  text-align: center;
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+label {
+  display: block;
+  font-weight: bold;
+}
+
+input[type="text"],
+input[type="email"],
+textarea,
+select {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+.button-container {
+  padding: 10px;
+  font-size: 16px;
+  text-align: center;
+  border-radius: 4px;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+
+    }
+
+.button-container .a1 {
+  height: 40px;
+  width: 40%;
+  margin: 5px;
+  background-color: #4caf50;
+  color: #fff;
+  padding-top:7px;
+  text-decoration:none;
+}
+
+
+.a1:hover {
+  background-color: #f78120;
+}
+.form-group:hover{
+  background-color: #f78120;
+}
+/*** login page ***/
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f4f4f4;
+}
+
+.container {
+  max-width: 400px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+h1 {
+  text-align: center;
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+label {
+  display: block;
+  font-weight: bold;
+}
+
+input[type="text"],
+input[type="password"] {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+.login-button {
+  display: block;
+  width: 100%;
+  padding: 10px;
+  background-color: blue;
+  color: #fff;
+  font-size: 16px;
+  text-align: center;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.login-button:hover {
+  background-color: black;
+}
+
+/*** CATEGORY PAGE ***/
+.cf{
+height:30px;
+width:auto;
+background:#57fa7b;
+}
+
+
+.my_image{
+height:400px;
+width:500px;
+
+}
+.cat{
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #fac532;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  max-width: 100%;
+  max-height: 100%;
+
+}
+.card{
+ width:200px;
+ height:320px;
+ background-color: white;
+ border: 1px solid #ccc;
+ border-radius: rounded-pill;
+
+ }
+.card-head{
+ width:125px;
+ height:140px;
+ background-color: white;
+ border: 1px solid white;
+ border-radius: 1px;
+ margin-left:35px;
+ margin-right:35px;
+ margin-bottom:5px;
+ margin-bottom:-10px;
+
+ }
+ .card-body{
+ padding-top:40px;
+ width:100%;
+ height:60px;
+ font-size:14px;
+ display: inline;}
+.button {
+  width: 50px;
+  height: 50px;
+  font-size: 10px;
+}
+
+.button1 {
+  width: 70px;
+  height: 50px;
+  font-size: 10px;
+}
+
+
+/*** PRODUCT PAGE ***/
+.c_main{
+background-color:#9effcd;
+width:auto;
+height:500px;}
+
+.c1{
+background-color:#ffc69e;
+}
+
+.card1{
+width:400px;
+height:500px;
+background:#fd9eff;}
+
+.card2{
+width:1200px;
+height:500px;
+text-align:center;
+
+padding-top: 30px;
+}
+
+.product-img{
+width:400px;
+height:500px;
+}
+
+.name{
+ color:#0d0500;
+ font-weight:800;}
+.des{
+ text-decoration:underline;}
+/*** BANNER ***/
+.row {
+    height: 650px;
+    width: 100%;
+
+}
+.banner {
+    width: 100%;
+    height: 600px;
+    background-color: #f2f2f2;
+    text-align: center;
+    padding: 10px;
+}
+
+.banner img {
+    width: 100%;
+    height: 600px;
+}
+.text1 {
+    font-family: Arial, sans-serif;
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.text2 {
+    font-family: Arial, sans-serif;
+    font-size: 16px;
+}
+

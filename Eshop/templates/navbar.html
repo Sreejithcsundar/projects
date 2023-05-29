@@ -1,0 +1,49 @@
+{% load static %}
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#">Home</a>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="{% url 'shop:allProdCat' %}"><i class="fa fa-home"></i></a>
+        </li>
+        {% if item_count > 0 %}
+        <li class="nav-item">
+          <a class="nav-link" href="{% url 'cartapp:cart_detail' %}"><i class="fa fa-cart-arrow-down"></i>({{item_count}})</a>
+        </li>
+        {% endif %}
+<!-- CATEGORY DROPDOWN PART START -->
+        <li class="nav-item dropdown">
+          {% if 'shop' in request.path %} active {% endif %}
+          <a class="nav-link dropdown-toggle" href="" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Categories
+          </a>
+            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <li><a class="dropdown-item" href="{% url 'shop:allProdCat' %}">All Products</a></li>
+                {% for cat in links %}
+                <li><a class="dropdown-item" href="{{cat.get_url}}">{{cat.name}}</a></li>
+                {% endfor %}
+               <hr class="dropdown-divider"></li>
+               <li><a class="dropdown-item" href="#"></a></li>
+            </ul>
+        </li>
+<!-- CATEGORY DROPDOWN PART END -->
+<!-- REGISTRATION PART START -->
+        {% if user.is_authenticated %}
+        <li class="nav-item"><a class="nav-link" href="{% url 'credentials:logout' %}" >Logout</a></li>
+        {% else %}
+        <li class="nav-item"><a class="nav-link" href="{% url 'credentials:register' %}">Registration</a></li>
+        <li class="nav-item"><a class="nav-link" href="{% url 'credentials:login' %}">Login</a></li>
+        {% endif %}
+      </ul>
+<!-- REGISTRATION PART END -->
+<!-- SEARCH BAR START -->
+      <form class="d-flex" action="{% url 'shop:SearchResultsView' %}" method="POST">
+        {% csrf_token %}
+        <input class="form-control me-2" type="search" placeholder="Search" name="searched"  aria-label="Search">
+        <button class="btn btn-outline-success" type="submit"><i class="fa fa-search"></i></button>
+      </form>
+<!-- SEARCH BAR END -->
+    </div>
+  </div>
+</nav>

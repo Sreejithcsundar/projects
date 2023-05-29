@@ -1,0 +1,92 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block metadescription %}
+   {% if category %}
+       {{ category.description |truncatewords:155 }}
+   {% else %}
+          Welcome to ABC store
+   {% endif %}
+{% endblock %}
+
+{% block title %}
+   {% if category %}
+       {{ category.name}} -ABC STORE
+   {% else %}
+          See your collections
+   {% endif %}
+{% endblock %}
+
+{% block content %}
+
+   {% if category %}
+       <div class="container-fluid cf">
+           <div class="row my_row_class">
+               <div class="mx-auto top">
+                  <p>
+                     <a href="{% url 'shop:allProdCat' %}" style="text-decoration: none;">Our product collections</a>
+                  </p>
+               </div>
+           </div>
+       </div>
+   {% endif %}
+<div class="top">
+    {% if category %}
+     <img class="my_image" src="{{category.image.url}}" alt="{{category.name}}">
+</div>
+<br>
+<div>
+        <h1 class="text-center my_title" >{{category.name}}</h1>
+        <p class="text-justify">{{category.des}}</p>
+</div>
+    {% else %}
+<br>
+<div>
+    <h1 class="text-center my_title">Our Product Collections</h1>
+        <p class="text-justify">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. </p>
+</div>
+    {% endif %}
+
+ <!--PRODUCT VIEW START-->
+<div class="container-fluid cat">
+
+    <div class="row justify-content-center">
+        {% for product in products.object_list %}
+        <div class="my_bottom_margin col-9 col-sm-12 col-md-2 col-lg-2">
+            <div class="shadow card ">
+                <span></span>
+
+                    <div class="card-head">
+                      <a href="{{product.get_url}}"><img class="card-img-top " src="{{product.image.url}}" alt="{{product.name}}"></a>
+                    </div>
+                    <div class="card-body">
+                        <h5 class="card-body">{{product.name}}</h5>
+                        <p class="card-text">${{product.price}}</p>
+                        {% if user.is_authenticated %}
+                        <a href="{% url 'shop:checkout' %}" class="btn mt-auto btn-success button">BUY NOW</a>
+                        <a href="{% url 'cartapp:add_cart' product.id %}" class="btn mt-auto btn-success button1">Add to Cart</a>
+
+                        {% endif %}
+                    </div>
+
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+<!-- PRODUCT VIEW END -->
+<!-- PAGINATOR START -->
+    <div class="mx-auto">
+        {% if products.paginator.num_pages > 1 %}
+         <hr>
+        <div class="text-center">
+            {% for pg in products.paginator.page_range %}
+            <a href="?page={{pg}}" class="btn btn-light btn-sm {% if products.number == pg %} active {% endif %}">{{pg}}</a>
+            {% endfor %}
+        </div>
+        {% endif %}
+    </div>
+<!-- PAGINATOR END -->
+    <br>
+</div>
+
+{% endblock %}

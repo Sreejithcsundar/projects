@@ -1,0 +1,17 @@
+{% load static %}
+<header>
+  <center>
+    <a href="{% url 'shop:allProdCat' %}"><img src="{% static 'img/logo2.png' %}" alt="Logoimage" width="180" height="180"></a>
+  </center>
+  <div>
+    <ul>
+
+
+    {% if user.is_authenticated %}
+       <li class="nav-item"> Hello {{user.username}}</li>
+    {% else %}
+       <li class="nav-item"><b>Please login</b></li>
+    {% endif %}
+</ul>
+  </div>
+</header>
